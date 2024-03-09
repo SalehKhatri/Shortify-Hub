@@ -23,7 +23,7 @@ function Login() {
 
     try {
       dispatch(setLoader(0))
-      const res = await fetch("https://sh-lcjg.onrender.comuser/login", {
+      const res = await fetch("https://sh-lcjg.onrender.com/user/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
