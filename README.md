@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/SalehKhatri/Shortify-Hub">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Shortify Hub</h3>
@@ -10,7 +10,7 @@
     Shortify Hub is a simple URL shortener built with ReactJS, Node.js, Express.js, and MongoDB. It provides a convenient way to shorten long URLs, making them easier to share.
     <br/>
     <br/>
-    <a href="https://github.com/SalehKhatri/Shortify-Hub">View Demo</a>
+    <a href="https://shortify-hub.vercel.app/">View Demo</a>
     .
   </p>
 </p>
