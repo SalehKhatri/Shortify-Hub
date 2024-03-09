@@ -61,7 +61,7 @@ function Signup() {
         >
           <div className="flex flex-col items-center gap-1 w-[100%]">
             <input
-              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm `}
+              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[90%] sm:w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm `}
               placeholder="Your Name"
               type="text"
               {...register("name", {
@@ -79,7 +79,7 @@ function Signup() {
 
           <div className="flex flex-col items-center gap-1 w-[100%]">
             <input
-              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm `}
+              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[90%] sm:w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm `}
               placeholder="Your Email Address"
               type="email"
               {...register("email", {
@@ -97,7 +97,7 @@ function Signup() {
 
           <div className="w-[100%] flex flex-col items-center">
             <input
-              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm`}
+              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[90%] sm:w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm`}
               type="password"
               placeholder="Your Password"
               {...register("password", {
@@ -121,7 +121,7 @@ function Signup() {
           <div className=" ">
              <p className={`${useSelector(darkMode)?"text-white":"text-black"} font-semibold`}> Already have an account?{" "}
              <Link to="/login" className="">
-              <span className="text-purple-600 font-extrabold  cursor-pointer hover:underline">
+              <span className="text-purple-400 font-bold  cursor-pointer hover:underline">
                 Log in
               </span>
               </Link>
