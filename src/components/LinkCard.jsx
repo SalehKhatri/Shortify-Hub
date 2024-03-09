@@ -3,13 +3,13 @@ import React, { forwardRef } from 'react'
 
 const  LinkCard=forwardRef(({shortUrl,redirectUrl,analytics},ref) =>
   {return (
-    <div ref={ref} className='flex justify-between bg-purple-400 w-[100%] py-2 px-4 rounded-md sm:flex text-black sm:justify-between  overflow-x-auto font-sans mt-2 scrollbar-thin   scrollbar-thumb-purple-600 scrollbar-track-purple-300 scrollbar-thumb-rounded scrollbar-track-rounded '>
+    <div ref={ref} className=' bg-purple-400 w-[100%] py-2 px-2 sm:px-4 rounded-md sm:flex text-black sm:justify-between  overflow-x-auto font-sans mt-2 scrollbar-thin   scrollbar-thumb-purple-600 scrollbar-track-purple-300 scrollbar-thumb-rounded scrollbar-track-rounded '>
       <div className=' gap-2 sm:gap-4 '>
         <p>{redirectUrl}</p>
-        <p className='font-bold'>https://sh-lcjg.onrender.com{shortUrl}</p>
+        <p className=' font-bold text-sm md:text-base lg:text-lg'>{import.meta.env.VITE_BASE_API_URL}/{shortUrl}</p>
       </div>
       <div>
-        <p className='font-bold'>visits:{analytics}</p>
+        <p className='font-bold text-sm'>visits:{analytics}</p>
         </div>
     </div>
   )}

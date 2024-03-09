@@ -3,7 +3,7 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
 
 export const fetchAllUrls=createAsyncThunk('fetchAllUrls',async ()=>{
-  const res = await fetch("https://sh-lcjg.onrender.com/analytics/getlinks", {
+  const res = await fetch(`${import.meta.env.VITE_BASE_API_URL}/analytics/getlinks`, {
         method: "GET",
         headers: {
           Accept: "application/json",

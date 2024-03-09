@@ -16,7 +16,7 @@ import { darkMode } from './Utils/Redux/darkModeSlice';
 function App() {
   const location = useLocation();
   const { pathname } = location;
-  useSelector(darkMode) && !['/login', '/signup'].includes(pathname) ?document.body.style = 'background: black;':document.body.style = 'background: white;'
+  useSelector(darkMode) ?document.body.style = 'background: black;':document.body.style = 'background: white;'
   const showNavbar = () => {
 
     return !['/login', '/signup'].includes(pathname);

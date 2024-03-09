@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { setLoader } from "../Utils/Redux/loadingSlice";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { darkMode } from "../Utils/Redux/darkModeSlice";
 
 function Login() {
   const navigate=useNavigate()
@@ -22,8 +23,8 @@ function Login() {
     }
 
     try {
-      dispatch(setLoader(0))
-      const res = await fetch("https://sh-lcjg.onrender.com/user/login", {
+      dispatch(setLoader(30))
+      const res = await fetch(`${import.meta.env.VITE_BASE_API_URL}/user/login`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -31,7 +32,7 @@ function Login() {
         },
         body: JSON.stringify(inputData),
       });
-
+      dispatch(setLoader(70))
       const parsedRes = await res.json();
       const jwt = parsedRes.token;
       if (!jwt) {
@@ -57,11 +58,11 @@ function Login() {
   return (
     <div className="flex justify-center flex-col bg-inherit py-20  w-[90%] md:w-[70%]  shadow-[0_0_40px_5px_rgba(192,132,252,0.7)]  rounded-lg sm:rounded-md ">
       <div className="flex main_logo justify-center items-center">
-        <p className={`text-black text-4xl font-bold`}>Shortify <span className={`text-black bg-purple-400 px-2 py-[2px] rounded-[4px]`}>hub</span></p>
+        <p className={`${useSelector(darkMode)?"text-white":"text-black"} text-4xl font-bold`}>Shortify <span className={`text-black bg-purple-400 px-2 py-[2px] rounded-[4px]`}>hub</span></p>
       </div>
 
       <div className="flex justify-center my-2 sm:my-4">
-        <p className="text-white text-ld sm:text-2xl">Login to your account</p>
+        <p className={`${useSelector(darkMode)?"text-white":"text-black"} text-ld sm:text-2xl`}>Login to your account</p>
       </div>
 
       <div className="form">
@@ -71,7 +72,7 @@ function Login() {
         >
           <div className="flex flex-col items-center gap-1 w-[100%]">
             <input
-              className="font-medium text-black sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm "
+              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm `}
               placeholder="Your Email Address"
               type="email"
               {...register("email", {
@@ -89,7 +90,7 @@ function Login() {
 
           <div className="w-[100%] flex flex-col items-center">
             <input
-              className="font-medium text-black sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm"
+              className={`font-medium ${useSelector(darkMode)?"text-white":"text-black"} sm:text-lg h-[4vh] font-sans pl-2 focus:outline-none focus:ring-0 w-[70%] bg-inherit border border-purple-400 shadow shadow-purple-300 p-5 rounded-sm`}
               type="password"
               placeholder="Your Password"
               {...register("password", {
@@ -107,7 +108,7 @@ function Login() {
             Login
           </button>
           <div className=" ">
-            <Link to="/signup" className="text-black">
+            <Link to="/signup" className={`${useSelector(darkMode)?"text-white":"text-black"} font-semibold`}>
               Don&#39;t have an account yet?{" "}
               <span className="text-purple-600 font-bold  cursor-pointer hover:underline">
                 Sign Up

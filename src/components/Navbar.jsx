@@ -20,15 +20,17 @@ function Navbar() {
   }
 
   return (
-    <div className=' top-0 left-0 w-[100%]     '>
-      <div className='flex justify-between py-4 px-6'>
-      <button onClick={handleSignOut} className='bg-purple-400 p-2 font-sans font-semibold rounded-md hover:bg-purple-500'>Logout</button>
+    <div className=' top-0 left-0 w-[100%]  '>
+      <div className=' flex justify-between items-center py-4 px-6'>
+
+      <button onClick={handleSignOut} className='bg-purple-400 p-2 font-sans font-semibold rounded-md hover:bg-purple-500 '>Logout</button>
 
       <DarkModeSwitch
       size={30}
       checked={isDarkMode}
       onChange={toggleDarkMode}
     />
+
       </div>
     </div>
   )
