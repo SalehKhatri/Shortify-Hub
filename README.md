@@ -32,9 +32,9 @@
 
 ## About The Project
 
-![Screen Shot](public\images\loginPage.png)
-![Screen Shot](public\images\homePage.png)
-![Screen Shot](public\images\homePageDark.png)
+![Screen Shot](public/images/loginPage.png)
+![Screen Shot](public/images/homePage.png)
+![Screen Shot](public/images/homePageDark.png)
 
 Shortify Hub was created with the goal of simplifying the process of sharing long URLs by providing a fast and efficient URL shortening service. Whether you're sharing links on social media, in emails, or any other context, Shortify Hub allows you to create concise and memorable short URLs.
 
