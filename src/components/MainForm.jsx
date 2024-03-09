@@ -43,11 +43,11 @@ function MainForm() {
         body: JSON.stringify({ url: userInput }),
       };
       const response = await fetch(
-        "https://sh-lcjg.onrender.com/createUrl",
+        `${import.meta.env.VITE_BASE_API_URL}/createUrl`,
         options
       ).then((res) => res.json());
       if (response.id) {
-        setShortUrl(`https://sh-lcjg.onrender.com/${response.id}`);
+        setShortUrl(`${import.meta.env.VITE_BASE_API_URL}/${response.id}`);
         addNewUrl(response.id,userInput)
       } else {
         toast.error(response.error, { transition: Bounce });
