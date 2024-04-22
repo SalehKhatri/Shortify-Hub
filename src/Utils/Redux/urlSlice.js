@@ -3,7 +3,7 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
 
 export const fetchAllUrls=createAsyncThunk('fetchAllUrls',async ()=>{
-  const res = await fetch(`${import.meta.env.VITE_BASE_API_URL}/analytics/getlinks`, {
+  const res = await fetch(`${import.meta.env.VITE_BASE_API_URL}/user/getlinks`, {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -16,7 +16,7 @@ export const fetchAllUrls=createAsyncThunk('fetchAllUrls',async ()=>{
 })
 
 export const urlSlice = createSlice({
-  name:'urls',
+  name:'user',
   initialState:{
     isLoading:false,
     urls:null,
