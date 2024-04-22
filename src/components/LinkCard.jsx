@@ -6,7 +6,7 @@ const  LinkCard=forwardRef(({shortUrl,redirectUrl,analytics},ref) =>
     <div ref={ref} className=' bg-purple-400 w-[100%] py-2 px-2 sm:px-4 rounded-md sm:flex text-black sm:justify-between  overflow-x-auto font-sans mt-2 scrollbar-thin   scrollbar-thumb-purple-600 scrollbar-track-purple-300 scrollbar-thumb-rounded scrollbar-track-rounded '>
       <div className=' gap-2 sm:gap-4 '>
         <p>{redirectUrl}</p>
-        <a href={import.meta.env.VITE_BASE_API_URL/shortUrl} className=' font-bold text-sm md:text-base lg:text-lg hover:underline duration-100 cursor-pointer'>{import.meta.env.VITE_BASE_API_URL}/{shortUrl}</a>
+        <a href={`${import.meta.env.VITE_BASE_API_URL}/${shortUrl}`} target='blank' className=' font-bold text-sm md:text-base lg:text-lg hover:underline duration-100 cursor-pointer'>{import.meta.env.VITE_BASE_API_URL}/{shortUrl}</a>
       </div>
       <div>
         <p className='font-bold text-sm'>visits:{analytics}</p>
